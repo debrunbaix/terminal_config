@@ -1,19 +1,142 @@
 # Kitty + Zsh Configuration
 
-This repository contains my custom configuration for the [Kitty](https://sw.kovidgoyal.net/kitty/) terminal and [Zsh](https://www.zsh.org/) shell with [Oh My Zsh](https://ohmyz.sh/).
+![Terminal Screenshot](assets/screen.png)
 
-## 🖼️ Preview
-![Preview](assets/exemple.png)
+This repository contains my custom configuration files for various tools, including Kitty, Zsh, Tmux, and more. Each file is designed to optimize my workflow with efficient keybindings, custom themes, and useful aliases.
 
-## 📄 Included Files
-- `kitty.conf`: Kitty configuration file
-- `.zshrc`: Zsh configuration with aliases and plugins
-- `custom-theme.zsh-theme`: Custom Zsh theme inspired by the "kardan" theme
-- `assets/exemple.png`: Screenshot of the setup
+## Terminal Emulator | Kitty
 
-## 🔧 Installation
-1. Copy `kitty.conf` to `~/.config/kitty/`.
-2. Replace or merge your `.zshrc` with the provided file.
-3. Copy `custom-theme.zsh-theme` to the `~/.oh-my-zsh/custom/themes/` directory and set `ZSH_THEME="custom-theme"` in your `.zshrc`.
+> kitty.conf
 
-Enjoy this minimalist and efficient setup!
+Kitty is my preferred terminal emulator. This configuration includes:
+
+Font settings:
+
+- font_family Monospace
+
+- font_size 16.0
+
+Disabling the audio bell:
+
+- enable_audio_bell no
+
+## Shell | ZShell
+
+> .zshrc
+
+Zsh is my shell of choice, configured with Oh My Zsh.
+
+Theme: 
+
+- Custom theme debrunbaix
+
+Plugins:
+
+- git - Git command aliases and enhancements
+
+- urltools - Useful URL manipulation tools
+
+- web-search - Search queries from the command line
+
+Aliases:
+
+- e → exit
+
+- ipa → ip -br -c a (Show IP addresses in a clean and simple format)
+
+- install → sudo apt install
+
+- r2 → radare2 (My favorite disassembler)
+
+- bat → batcat (Alternative to cat with syntax highlighting)
+
+- v → nvim (Open Neovim quickly)
+
+- ya → yazi (Terminal file manager)
+
+## Multiplexer | Tmux
+
+.tmux.conf
+
+Tmux is a terminal multiplexer that allows managing multiple terminal sessions efficiently.
+
+Key Bindings:
+
+- Prefix + r → Reload the configuration file
+
+- h/j/k/l → Move between panes (Vim-like navigation)
+
+- Ctrl + f → Toggle zoom for the current pane
+
+Mouse Support:
+
+- Enables pane resizing, scrolling, and selection with the mouse
+
+Status Bar:
+
+- Moved to the top of the terminal
+
+- Transparent background for better aesthetics
+
+- Spotify Integration: Displays currently playing song
+
+Plugins:
+
+- Tmux Plugin Manager (TPM) - tmux-plugins/tpm
+
+- Spotify Info - feqzz/tmux-spotify-info
+
+![Spotify Info](assets/spotify.png)
+
+## IDE | Nvim
+
+| Shortcut     | Action                          |
+|-------------|--------------------------------|
+| `<Leader>e` | Open Telescope (Find files)    |
+| `<Leader>o` | Open Oil.nvim (File Explorer)  |
+| `<Leader>rn`| Rename variable (LSP)         |
+| `<Leader>f` | Format code (LSP)             |
+| `gd`        | Go to definition (LSP)        |
+| `gr`        | Find references (LSP)         |
+| `gl`        | Show diagnostics (LSP)        |
+| `-` (Oil)   | Move up one directory         |
+| `q` (Oil)   | Close file explorer           |
+
+> **Note:** `<Leader>` is set to **Space** (`<Space>`).
+
+## Other cool tools
+
+### Zoxide
+
+![Zoxide Normal Mode](assets/zi_normal.png)
+
+**Zoxide** is a blazing fast alternative to `cd`, designed to help you navigate your directories efficiently.  
+Instead of manually typing long paths, **Zoxide** learns your most used directories and allows you to jump to them quickly.
+
+**Advantages**:
+- **Smarter navigation**: Learns your frequent directories and ranks them.
+- **Fuzzy matching**: You don’t need to type the full path, just a part of it.
+- **Speed**: Much faster than traditional `cd` commands.
+
+**Usage**:
+- `z project` → Jump to the most visited "project" directory.
+- `zi config` → Search and navigate to a directory containing "config".
+
+![Zoxide Test Mode](assets/zi_test.png)
+
+### Yazi
+
+![yazi](assets/yazi.png)
+
+**Yazi** is a modern, high-performance terminal file manager designed for efficiency and speed. It offers a **keyboard-driven workflow**, **rich previews**, and **extensive customization**.
+
+**Advantages**:
+- **Minimal & Fast**: Built for speed with a responsive UI.
+- **Vim-like Navigation**: Uses familiar keybindings (`h/j/k/l` for navigation).
+- **Rich Previews**: Supports images, videos, PDFs, and more.
+
+**Usage**:
+- `ya` → Launch Yazi.
+- `h/l` → Navigate between directories.
+- `j/k` → Move up/down in the file list.
+- `Enter` → Open file/directory.
