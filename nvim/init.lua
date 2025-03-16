@@ -1,31 +1,15 @@
--- ===================================================================
---  Neovim Configuration
---  Author: 0x2brunbaix
---  Description: Main configuration file that loads all modular settings.
--- ===================================================================
 
--- Load basic editor options (line numbers, indentation, colors, etc.)
-require("options")
+require("config.lazy")
 
--- Load plugin manager and installed plugins
-require("plugins")
+require("lazy").setup("plugins")
 
--- Load theme and color scheme settings
-require("theme")
+vim.opt.clipboard = "unnamedplus"
 
--- Load custom key mappings
-require("keymaps")
+vim.keymap.set("n", "<C-y>", '"+y', { noremap = true, silent = true })
+vim.keymap.set("v", "<C-y>", '"+y', { noremap = true, silent = true })
 
--- Load Language Server Protocol (LSP) configurations for Python, C, etc.
-require("lsp")
+vim.keymap.set("n", "<C-p>", '"+P', { noremap = true, silent = true })
+vim.keymap.set("v", "<C-p>", '"+P', { noremap = true, silent = true })
 
--- Load auto-completion setup (nvim-cmp, snippets, etc.)
-require("completion")
-
--- Load custom dashboard for the startup screen
-require("dashboard")
-
--- ===================================================================
---  End of configuration
--- ===================================================================
-
+vim.opt.shiftwidth = 4
+vim.wo.relativenumber = true
