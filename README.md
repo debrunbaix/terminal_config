@@ -54,53 +54,12 @@ Aliases:
 
 - ya → yazi (Terminal file manager)
 
-## Multiplexer | Tmux
-
-.tmux.conf
-
-Tmux is a terminal multiplexer that allows managing multiple terminal sessions efficiently.
-
-Key Bindings:
-
-- Prefix + r → Reload the configuration file
-
-- h/j/k/l → Move between panes (Vim-like navigation)
-
-- Ctrl + f → Toggle zoom for the current pane
-
-Mouse Support:
-
-- Enables pane resizing, scrolling, and selection with the mouse
-
-Status Bar:
-
-- Moved to the top of the terminal
-
-- Transparent background for better aesthetics
-
-- Spotify Integration: Displays currently playing song
-
-Plugins:
-
-- Tmux Plugin Manager (TPM) - tmux-plugins/tpm
-
-- Spotify Info - feqzz/tmux-spotify-info
-
-![Spotify Info](assets/spotify.png)
-
 ## IDE | Nvim
 
 | Shortcut     | Action                          |
 |-------------|--------------------------------|
-| `<Leader>e` | Open Telescope (Find files)    |
+| `<Leader>f` | Open Telescope (Find files)    |
 | `<Leader>o` | Open Oil.nvim (File Explorer)  |
-| `<Leader>rn`| Rename variable (LSP)         |
-| `<Leader>f` | Format code (LSP)             |
-| `gd`        | Go to definition (LSP)        |
-| `gr`        | Find references (LSP)         |
-| `gl`        | Show diagnostics (LSP)        |
-| `-` (Oil)   | Move up one directory         |
-| `q` (Oil)   | Close file explorer           |
 
 > **Note:** `<Leader>` is set to **Space** (`<Space>`).
 
